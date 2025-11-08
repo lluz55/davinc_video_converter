@@ -110,7 +110,7 @@ Acesse: `http://localhost:3000`
 ### Backend
 - ✅ Logging colorido no console
 - ✅ Logs salvos em arquivos diários
-gg- ✅ Progresso real do FFmpeg
+- ✅ Progresso real do FFmpeg
 - ✅ Arquitetura modular
 - ✅ Tratamento robusto de erros
 
