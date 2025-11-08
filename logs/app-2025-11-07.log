@@ -1,0 +1,34 @@
+[2025-11-07T23:40:38.990Z] [INFO] Diretório criado: ./logs
+[2025-11-07T23:40:38.992Z] [INFO] Servidor rodando na porta 3000
+[2025-11-07T23:40:49.910Z] [INFO] GET /check-ffmpeg | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:41:00.494Z] [INFO] POST /convert | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:41:19.487Z] [INFO] GET /.well-known/appspecific/com.chrome.devtools.json | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:41:28.793Z] [INFO] GET /check-ffmpeg | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:45:51.984Z] [INFO] Servidor rodando na porta 3000
+[2025-11-07T23:46:03.854Z] [INFO] GET /check-ffmpeg | {"ip":"::1"}
+[2025-11-07T23:46:03.868Z] [INFO] GET /favicon.ico | {"ip":"::1"}
+[2025-11-07T23:46:18.820Z] [INFO] POST /convert | {"ip":"::1"}
+[2025-11-07T23:46:26.262Z] [INFO] GET /.well-known/appspecific/com.chrome.devtools.json | {"ip":"::1"}
+[2025-11-07T23:46:29.572Z] [INFO] GET /check-ffmpeg | {"ip":"::1"}
+[2025-11-07T23:47:03.789Z] [INFO] GET /convert | {"ip":"::1"}
+[2025-11-07T23:47:47.249Z] [INFO] Servidor rodando na porta 3000
+[2025-11-07T23:48:08.583Z] [INFO] GET /.well-known/appspecific/com.chrome.devtools.json | {"ip":"::1"}
+[2025-11-07T23:48:08.597Z] [INFO] GET /check-ffmpeg | {"ip":"::1"}
+[2025-11-07T23:51:47.811Z] [INFO] Servidor rodando na porta 3000
+[2025-11-07T23:52:09.263Z] [INFO] GET /api/check-ffmpeg | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:52:09.297Z] [INFO] Verificação FFmpeg: Instalado
+[2025-11-07T23:52:12.822Z] [INFO] GET /.well-known/appspecific/com.chrome.devtools.json | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:52:44.720Z] [INFO] Servidor rodando na porta 3000
+[2025-11-07T23:54:35.426Z] [INFO] GET /.well-known/appspecific/com.chrome.devtools.json | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:54:35.437Z] [INFO] GET /api/check-ffmpeg | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:54:35.469Z] [INFO] Verificação FFmpeg: Instalado
+[2025-11-07T23:54:38.754Z] [INFO] POST /api/upload | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:54:38.757Z] [INFO] Upload iniciado | {"originalName":"FIMI0002 (1).MP4","savedAs":"1762559678757-FIMI0002 (1).MP4"}
+[2025-11-07T23:54:42.145Z] [SUCCESS] Upload concluído | {"count":1,"files":["FIMI0002 (1).MP4"]}
+[2025-11-07T23:54:42.155Z] [INFO] POST /api/convert | {"ip":"::ffff:127.0.0.1"}
+[2025-11-07T23:54:42.155Z] [INFO] Iniciando conversão em lote | {"count":1,"outputDir":"./output"}
+[2025-11-07T23:54:42.155Z] [INFO] Iniciando conversão | {"id":1762559682155,"input":"uploads/1762559678757-FIMI0002 (1).MP4","output":"output/FIMI0002 (1).mov"}
+[2025-11-07T23:54:42.223Z] [INFO] FFmpeg: Duration: 00:05:00.00, start: 0.000000, bitrate: 55945 kb/s | {"id":1762559682155}
+[2025-11-07T23:54:42.223Z] [INFO] FFmpeg: Stream #0:0[0x1](eng): Video: h264 (High) (avc1 / 0x31637661), yuvj420p(pc, bt709, progressive), 1920x1080, 55772 kb/s, 60 fps, 60 tbr, 120k tbn (default) | {"id":1762559682155}
+[2025-11-07T23:54:42.228Z] [INFO] FFmpeg: Stream #0:0 -> #0:0 (h264 (native) -> prores (prores_ks)) | {"id":1762559682155}
+[2025-11-07T23:54:42.290Z] [INFO] FFmpeg: Stream #0:0(eng): Video: prores (HQ) (apch / 0x68637061), yuv422p10le(tv, bt709, progressive), 1920x1080, q=2-31, 200 kb/s, | {"id":1762559682155}

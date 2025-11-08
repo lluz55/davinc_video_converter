@@ -4,236 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conversor de Vídeos - ProRes</title>
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      min-height: 100vh;
-      padding: 20px;
-    }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      background: white;
-      border-radius: 16px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-      padding: 40px;
-    }
-
-    h1 {
-      color: #333;
-      margin-bottom: 10px;
-      font-size: 32px;
-    }
-
-    .subtitle {
-      color: #666;
-      margin-bottom: 30px;
-      font-size: 14px;
-    }
-
-    .warning {
-      background: #fff3cd;
-      border-left: 4px solid #ffc107;
-      padding: 12px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-      display: none;
-    }
-
-    .warning.show {
-      display: block;
-    }
-
-    .form-group {
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-bottom: 8px;
-      color: #333;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .file-input-wrapper {
-      position: relative;
-      overflow: hidden;
-      display: inline-block;
-      width: 100%;
-    }
-
-    .file-input-wrapper input[type=file] {
-      position: absolute;
-      left: -9999px;
-    }
-
-    .file-input-label {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 40px;
-      background: #f8f9fa;
-      border: 2px dashed #dee2e6;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s;
-      text-align: center;
-    }
-
-    .file-input-label:hover {
-      background: #e9ecef;
-      border-color: #667eea;
-    }
-
-    .file-input-label.dragover {
-      background: #e7f1ff;
-      border-color: #667eea;
-    }
-
-    input[type="text"] {
-      width: 100%;
-      padding: 12px;
-      border: 2px solid #dee2e6;
-      border-radius: 8px;
-      font-size: 14px;
-      transition: border-color 0.3s;
-    }
-
-    input[type="text"]:focus {
-      outline: none;
-      border-color: #667eea;
-    }
-
-    .selected-files {
-      margin-top: 15px;
-      padding: 15px;
-      background: #f8f9fa;
-      border-radius: 8px;
-      display: none;
-    }
-
-    .selected-files.show {
-      display: block;
-    }
-
-    .file-item {
-      padding: 8px;
-      background: white;
-      margin: 5px 0;
-      border-radius: 4px;
-      font-size: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .file-item button {
-      background: #dc3545;
-      color: white;
-      border: none;
-      padding: 4px 12px;
-      border-radius: 4px;
-      cursor: pointer;
-      font-size: 12px;
-    }
-
-    .file-item button:hover {
-      background: #c82333;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 15px;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      color: white;
-      border: none;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .btn:hover:not(:disabled) {
-      transform: translateY(-2px);
-    }
-
-    .btn:disabled {
-      opacity: 0.6;
-      cursor: not-allowed;
-    }
-
-    .progress-container {
-      margin-top: 20px;
-      display: none;
-    }
-
-    .progress-container.show {
-      display: block;
-    }
-
-    .progress-bar {
-      width: 100%;
-      height: 30px;
-      background: #e9ecef;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 10px;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      transition: width 0.3s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: white;
-      font-weight: 600;
-      font-size: 12px;
-    }
-
-    .results {
-      margin-top: 20px;
-      display: none;
-    }
-
-    .results.show {
-      display: block;
-    }
-
-    .result-item {
-      padding: 12px;
-      margin: 8px 0;
-      border-radius: 8px;
-      font-size: 14px;
-    }
-
-    .result-item.success {
-      background: #d4edda;
-      border-left: 4px solid #28a745;
-    }
-
-    .result-item.error {
-      background: #f8d7da;
-      border-left: 4px solid #dc3545;
-    }
-
-    .icon {
-      margin-right: 8px;
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <button id="theme-toggle">🌙</button>
   <div class="container">
     <h1>🎬 Conversor de Vídeos para ProRes</h1>
     <p class="subtitle">Converte vídeos para formato ProRes (.mov) com codec prores_ks e áudio PCM</p>
@@ -264,7 +38,11 @@
 
       <div class="form-group">
         <label for="outputDir">Diretório de saída:</label>
-        <input type="text" id="outputDir" name="outputDir" placeholder="Ex: ./output ou C:\Videos\Convertidos" value="./output">
+        <div style="display: flex;">
+          <input type="text" id="outputDir" name="outputDir" placeholder="Ex: ./output ou C:\Videos\Convertidos" value="./output">
+          <button type="button" id="browseDir" class="btn" style="width: auto; margin-left: 10px; padding: 10px 15px;">Procurar</button>
+        </div>
+        <input type="file" id="dirPicker" webkitdirectory directory style="display: none;">
         <small style="color: #666; font-size: 12px; display: block; margin-top: 5px;">
           Deixe em branco para usar o diretório padrão (./output)
         </small>
@@ -280,164 +58,20 @@
         <div class="progress-fill" id="progressFill">0%</div>
       </div>
       <div id="progressText" style="text-align: center; color: #666; font-size: 14px;"></div>
+      <div id="currentFile" style="text-align: center; color: #666; font-size: 12px; margin-top: 5px;"></div>
+      <div class="stats" style="display: flex; justify-content: space-around; margin-top: 10px;">
+        <div class="stat-item">
+          <span id="statCompleted">0</span> / <span id="statTotal">0</span>
+        </div>
+        <div class="stat-item">
+          <span id="statProgress">0%</span>
+        </div>
+      </div>
     </div>
 
     <div class="results" id="results"></div>
   </div>
 
-  <script>
-    let selectedFiles = [];
-
-    // Verificar se FFmpeg está instalado
-    fetch('/check-ffmpeg')
-      .then(res => res.json())
-      .then(data => {
-        if (!data.installed) {
-          document.getElementById('ffmpegWarning').classList.add('show');
-          document.getElementById('convertBtn').disabled = true;
-        }
-      });
-
-    const videoInput = document.getElementById('videoInput');
-    const dropZone = document.getElementById('dropZone');
-    const selectedFilesDiv = document.getElementById('selectedFiles');
-    const form = document.getElementById('convertForm');
-
-    // Drag and drop
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault();
-      dropZone.classList.add('dragover');
-    });
-
-    dropZone.addEventListener('dragleave', () => {
-      dropZone.classList.remove('dragover');
-    });
-
-    dropZone.addEventListener('drop', (e) => {
-      e.preventDefault();
-      dropZone.classList.remove('dragover');
-      const files = Array.from(e.dataTransfer.files);
-      handleFiles(files);
-    });
-
-    videoInput.addEventListener('change', (e) => {
-      const files = Array.from(e.target.files);
-      handleFiles(files);
-    });
-
-    function handleFiles(files) {
-      selectedFiles = files;
-      displaySelectedFiles();
-    }
-
-    function displaySelectedFiles() {
-      if (selectedFiles.length === 0) {
-        selectedFilesDiv.classList.remove('show');
-        return;
-      }
-
-      selectedFilesDiv.classList.add('show');
-      selectedFilesDiv.innerHTML = `
-        <div style="margin-bottom: 10px; font-weight: 600;">
-          ${selectedFiles.length} arquivo(s) selecionado(s):
-        </div>
-      `;
-
-      selectedFiles.forEach((file, index) => {
-        const fileItem = document.createElement('div');
-        fileItem.className = 'file-item';
-        fileItem.innerHTML = `
-          <span>📹 ${file.name} (${(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-          <button type="button" onclick="removeFile(${index})">Remover</button>
-        `;
-        selectedFilesDiv.appendChild(fileItem);
-      });
-    }
-
-    function removeFile(index) {
-      selectedFiles.splice(index, 1);
-      displaySelectedFiles();
-    }
-
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
-
-      if (selectedFiles.length === 0) {
-        alert('Por favor, selecione pelo menos um vídeo!');
-        return;
-      }
-
-      const formData = new FormData();
-      selectedFiles.forEach(file => {
-        formData.append('videos', file);
-      });
-      formData.append('outputDir', document.getElementById('outputDir').value);
-
-      const convertBtn = document.getElementById('convertBtn');
-      const progressContainer = document.getElementById('progressContainer');
-      const progressFill = document.getElementById('progressFill');
-      const progressText = document.getElementById('progressText');
-      const resultsDiv = document.getElementById('results');
-
-      convertBtn.disabled = true;
-      convertBtn.textContent = 'Convertendo...';
-      progressContainer.classList.add('show');
-      resultsDiv.classList.remove('show');
-
-      try {
-        progressFill.style.width = '50%';
-        progressFill.textContent = '50%';
-        progressText.textContent = 'Processando vídeos...';
-
-        const response = await fetch('/convert', {
-          method: 'POST',
-          body: formData
-        });
-
-        const data = await response.json();
-
-        progressFill.style.width = '100%';
-        progressFill.textContent = '100%';
-        progressText.textContent = 'Conversão concluída!';
-
-        // Mostrar resultados
-        resultsDiv.innerHTML = '<h3 style="margin-bottom: 15px;">Resultados:</h3>';
-        data.results.forEach(result => {
-          const resultItem = document.createElement('div');
-          resultItem.className = `result-item ${result.status}`;
-          if (result.status === 'success') {
-            resultItem.innerHTML = `
-              <span class="icon">✅</span>
-              <strong>${result.file}</strong> - Convertido com sucesso!<br>
-              <small style="color: #666;">Salvo em: ${result.output}</small>
-            `;
-          } else {
-            resultItem.innerHTML = `
-              <span class="icon">❌</span>
-              <strong>${result.file}</strong> - Erro na conversão<br>
-              <small style="color: #721c24;">${result.message}</small>
-            `;
-          }
-          resultsDiv.appendChild(resultItem);
-        });
-        resultsDiv.classList.add('show');
-
-        // Limpar seleção
-        selectedFiles = [];
-        videoInput.value = '';
-        displaySelectedFiles();
-
-      } catch (error) {
-        alert('Erro ao converter vídeos: ' + error.message);
-      } finally {
-        convertBtn.disabled = false;
-        convertBtn.textContent = 'Converter Vídeos';
-        setTimeout(() => {
-          progressContainer.classList.remove('show');
-        }, 2000);
-      }
-    });
-  </script>
+  <script src="app.js"></script>
 </body>
 </html>
-
